@@ -18,7 +18,7 @@
 
 body, head {
     font-family: "Outfit", sans-serif;
-    @apply bg-primaryColor overflow-hidden
+    @apply bg-primaryColor h-vh
 }
 
 .container {
