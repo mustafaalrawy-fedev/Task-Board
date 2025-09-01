@@ -78,6 +78,7 @@ const createTask = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
     try {
       const response = await axiosInstance.post('/task', { ...task });
+      toast.success("Create Task Successfully!")
       return response.data;
     } catch (error) {
       if (error?.response?.status === 429) {
@@ -94,6 +95,7 @@ const createTask = createAsyncThunk(
           message: 'Rate limit reached. Try again later.',
         });
       }
+      toast.error("Cann't Create Task!")
       return rejectWithValue({
         isRateLimit: false,
         message: error?.message || 'Something went wrong',
@@ -111,6 +113,7 @@ const deleteTask = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
     try {
       const response = await axiosInstance.delete(`/task/${id}`);
+      toast.success("Delete Task Successfully!")
       return response.data;
     } catch (error) {
       if (error?.response?.status === 429) {
@@ -127,6 +130,7 @@ const deleteTask = createAsyncThunk(
           message: 'Rate limit reached. Try again later.',
         });
       }
+        toast.error("Cann't Delete Task!")
       return rejectWithValue({
         isRateLimit: false,
         message: error?.message || 'Something went wrong',
@@ -144,6 +148,7 @@ const updateTask = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
     try {
       const response = await axiosInstance.put(`/task/${id}`, { ...task });
+      toast.success("Update Task Successfully!")
       return response.data;
     } catch (error) {
       if (error?.response?.status === 429) {
@@ -160,6 +165,7 @@ const updateTask = createAsyncThunk(
           message: 'Rate limit reached. Try again later.',
         });
       }
+      toast.error("Cann't Update Task!")
       return rejectWithValue({
         isRateLimit: false,
         message: error?.message || 'Something went wrong',
