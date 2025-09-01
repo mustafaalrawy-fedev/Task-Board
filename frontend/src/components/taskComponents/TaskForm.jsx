@@ -259,7 +259,7 @@ const TaskForm = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className='flex justify-end items-end gap-5 mt-auto'
+        className='flex justify-end items-end gap-5 mt-5'
       >
         <motion.button
           initial={{ opacity: 0, y: 40, scale: 0.8 }}
