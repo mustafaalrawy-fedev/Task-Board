@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@theme {
+  /* colors */
+  --color-primaryColor: #f8fafc;
+  --color-taskInProgressCol: #f5d565;
+  --color-addNewTask: #f5e8d5;
+  --color-AddBtnCol: #e9a23b;
+  --color-taskCompCol: #a0ecb1;
+  --color-taskCompBtnCol: #32d657;
+  --color-taskWontDoCol: #f7d4d3;
+  --color-taskWontDoBtnCol: #dd524c;
+  --color-taskToDoCol: #e3e8ef;
+  --color-subTitleCol: #00000033;
+  --color-highlightCol: #3662e3;
+  --color-delBtnColor: #97a3b6;
+}
+
+body,
+head {
+  font-family: 'Outfit', sans-serif;
+  @apply bg-primaryColor h-screen;
+}
+
+.container {
+  @apply py-6 my-6 xl:px-96 lg:px-80 md:px-50 px-5 max-w-full;
+}
+
+.main-transition {
+  @apply transition-all duration-500;
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  scrollbar-width: thin;
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  /* @apply bg-taskToDoCol rounded-full cursor-grab; */
+  @apply bg-taskToDoCol rounded-full;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-highlightCol);
+}
